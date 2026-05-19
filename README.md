@@ -1,0 +1,2 @@
+# rqa-factor
+RQA: RQA factor: recurrence plots capture nonlinear regime transitions via determinism (DET) and laminarity.
