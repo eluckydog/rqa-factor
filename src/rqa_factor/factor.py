@@ -140,10 +140,11 @@ def recurrence_quantification(R: np.ndarray) -> dict[str, float]:
     else:
         entr = 0.0
 
-    # Vertical line segments (laminarity)
+    # Vertical line segments (laminarity) — exclude main diagonal
     vert_lines = []
     for col in range(N):
-        col_elements = R[:, col]
+        col_elements = R[:, col].copy()
+        col_elements[col] = False  # exclude self-recurrence
         seg_len = 0
         for val in col_elements:
             if val:
